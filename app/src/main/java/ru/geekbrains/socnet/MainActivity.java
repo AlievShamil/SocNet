@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(View view, int position) {
                 Toast.makeText(that, String.format("Позиция - %d", position),
                         Toast.LENGTH_SHORT).show();
+                Soc soc = dataSource.get(position);
+                if (soc.getLike()) {
+                    soc.setLike(false);
+                } else {
+                    soc.setLike(true);
+                }
             }
         });
 
